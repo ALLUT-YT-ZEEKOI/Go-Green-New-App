@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ellipsis_text/flutter_ellipsis_text.dart';
 import 'package:gogreen_lite/V2/main_product_card_v2.dart';
+import 'package:gogreen_lite/V2/v2_widgets/home_page_Featured)v2..dart';
 import 'package:gogreen_lite/V2/v2_widgets/home_page_first_courcel_v2.dart';
 import 'package:gogreen_lite/V2/v2_widgets/home_page_image_second_courcel.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -545,8 +546,7 @@ class HomeScreenV2 extends StatelessWidget {
                     height: 20,
                   ),
                   Container(
-                    width: screenWidth * .9,
-                    // height: 289,
+                    padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
                     decoration: const BoxDecoration(
                       color: Color(0xFFE4FFE1),
                     ),
@@ -571,50 +571,125 @@ class HomeScreenV2 extends StatelessWidget {
                         Row(
                           children: [
                             for (int i = 0; i <= 2; i++)
-                              Container(
-                                padding: const EdgeInsets.all(10),
-                                decoration: ShapeDecoration(
-                                  shape: RoundedRectangleBorder(
-                                    side: const BorderSide(
-                                      width: 0.62,
-                                      strokeAlign:
-                                          BorderSide.strokeAlignOutside,
-                                      color: Color(0xFFD9D9D9),
+                              Expanded(
+                                child: Column(
+                                  children: [
+                                    Container(
+                                      padding: const EdgeInsets.all(10),
+                                      decoration: ShapeDecoration(
+                                        shape: RoundedRectangleBorder(
+                                          side: const BorderSide(
+                                            width: 0.62,
+                                            strokeAlign:
+                                                BorderSide.strokeAlignOutside,
+                                            color: Color(0xFFD9D9D9),
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(8.68),
+                                        ),
+                                      ),
+                                      child: Image.asset(
+                                        'assets/v2 Images/lays 10.png',
+                                        width: 100,
+                                      ),
                                     ),
-                                    borderRadius: BorderRadius.circular(8.68),
-                                  ),
-                                ),
-                                child: Image.asset(
-                                  'assets/v2 Images/lays 10.png',
-                                  width: 100,
+                                    const Text(
+                                      'Extra Cheesy Lays Classic',
+                                      style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 11,
+                                        fontWeight: FontWeight.w600,
+                                      ),
+                                    )
+                                  ],
                                 ),
                               ),
                           ],
                         ),
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        SizedBox(
+                          width: screenWidth * .9,
+                          height: 60,
+                          child: ElevatedButton(
+                            style: ButtonStyle(
+                              backgroundColor:
+                                  WidgetStateProperty.all(Colors.green),
+                            ),
+                            onPressed: () {},
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                const SizedBox(
+                                  width: 112,
+                                  child: Text(
+                                    'Try GGO Offer',
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.w600,
+                                    ),
+                                  ),
+                                ),
+                                const SizedBox(
+                                    width:
+                                        8), // Add spacing between text and image
+                                Image.asset(
+                                  "assets/v2 Images/Vector.png",
+                                  width: 20,
+                                  height: 20,
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
                       ],
                     ),
                   ),
-                  ElevatedButton(
-                      onPressed: () {},
-                      child: Row(
-                        children: [
-                          const SizedBox(
-                            width: 112,
-                            child: Text(
-                              'Try GGO Offer',
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 16,
-                                fontFamily: 'Roboto',
-                                fontWeight: FontWeight.w600,
-                                height: 0,
-                              ),
-                            ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      const Text(
+                        'Farm Fresh Picks',
+                        style: TextStyle(
+                          color: Color(0xFF202020),
+                          fontSize: 15,
+                          fontWeight: FontWeight.w300,
+                        ),
+                        overflow: TextOverflow.ellipsis,
+                        textAlign: TextAlign.center,
+                      ),
+                      Container(
+                        width: screenWidth * 0.3,
+                        height: 3,
+                        decoration: ShapeDecoration(
+                          gradient: const LinearGradient(
+                            begin: Alignment(1.00, 0.00),
+                            end: Alignment(-1, 0),
+                            colors: [Color(0xFFF3F3F3), Colors.white],
                           ),
-                          Image.asset("assets/v2 Images/Vector.png")
-                        ],
-                      ))
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(100),
+                          ),
+                        ),
+                      ),
+                      const Text(
+                        'See All',
+                        textAlign: TextAlign.right,
+                        style: TextStyle(
+                          color: Color(0xFF00B761),
+                          fontSize: 14,
+                          fontWeight: FontWeight.w400,
+                        ),
+                      )
+                    ],
+                  ),
+                  const HomePageFeaturedv2()
                 ],
               ),
             ),
