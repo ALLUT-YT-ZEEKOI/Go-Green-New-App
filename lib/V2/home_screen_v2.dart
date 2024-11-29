@@ -3,6 +3,7 @@ import 'package:flutter_ellipsis_text/flutter_ellipsis_text.dart';
 import 'package:gogreen_lite/V2/main_product_card_v2.dart';
 import 'package:gogreen_lite/V2/v2_widgets/home_page_first_courcel_v2.dart';
 import 'package:gogreen_lite/V2/v2_widgets/home_page_image_second_courcel.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class HomeScreenV2 extends StatelessWidget {
   const HomeScreenV2({super.key});
@@ -303,7 +304,317 @@ class HomeScreenV2 extends StatelessWidget {
                   const SizedBox(
                     height: 18,
                   ),
-                  const MainProductCardV2()
+                  const MainProductCardV2(),
+                  const SizedBox(
+                    height: 18,
+                  ),
+                  Stack(
+                    children: [
+                      Image.asset(
+                        'assets/v2 Images/Group 109.png',
+                        width: screenWidth * .9,
+                        fit: BoxFit.cover,
+                      ),
+                      Positioned(
+                        top: 20,
+                        left: 0,
+                        right: 0,
+                        child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Image.asset(
+                              'assets/v2 Images/Layer 1.png',
+                              width: 40,
+                            ),
+                            SizedBox(
+                              width: screenWidth * .6,
+                              child: Text(
+                                'Subscribe Organic Milk directly from farmers.',
+                                textAlign: TextAlign.center,
+                                style: GoogleFonts.poppins(
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.w400,
+                                  fontStyle: FontStyle.italic,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      const Text(
+                        'Farm Fresh Picks',
+                        style: TextStyle(
+                          color: Color(0xFF202020),
+                          fontSize: 15,
+                          fontWeight: FontWeight.w300,
+                        ),
+                        overflow: TextOverflow.ellipsis,
+                        textAlign: TextAlign.center,
+                      ),
+                      Container(
+                        width: screenWidth * 0.6,
+                        height: 3,
+                        decoration: ShapeDecoration(
+                          gradient: const LinearGradient(
+                            begin: Alignment(-1, 0),
+                            end: Alignment(1.00, 0.00),
+                            colors: [Color(0xFFF3F3F3), Colors.white],
+                          ),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(100),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Stack(
+                        clipBehavior: Clip.none,
+                        children: [
+                          Container(
+                            padding: const EdgeInsets.all(10),
+                            width: screenWidth * .4 + 25,
+                            decoration: ShapeDecoration(
+                              gradient: const LinearGradient(
+                                begin: Alignment(0.00, -1.00),
+                                end: Alignment(0, 1),
+                                colors: [Color(0xFFFDFCF7), Color(0xFFF9EEDC)],
+                              ),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                            ),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                const SizedBox(
+                                  height: 30,
+                                ),
+                                Image.asset('assets/v2 Images/EGG 1.png'),
+                                const Text(
+                                  'Egg',
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                                ),
+                                const Text(
+                                  'FREE',
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 10.62,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                ),
+                                const Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text(
+                                      '60',
+                                      style: TextStyle(
+                                        color: Color(0xFF9B9999),
+                                        fontSize: 7.98,
+                                        fontWeight: FontWeight.w500,
+                                      ),
+                                    ),
+                                    Text(
+                                      '100 g',
+                                      style: TextStyle(
+                                        color: Color(0xFF302E2E),
+                                        fontSize: 10,
+                                        fontWeight: FontWeight.w400,
+                                      ),
+                                    )
+                                  ],
+                                )
+                              ],
+                            ),
+                          ),
+                          Positioned(
+                            top:
+                                -20, // Adjust this value to move the image further out
+                            left:
+                                -20, // Adjust this value to move the image further left
+                            child: Image.asset(
+                              'assets/v2 Images/get.png',
+                              width: 100,
+                            ),
+                          ),
+                        ],
+                      ),
+                      Stack(
+                        clipBehavior: Clip.none,
+                        children: [
+                          Container(
+                            padding: const EdgeInsets.all(10),
+                            width: screenWidth * .4 + 25,
+                            decoration: ShapeDecoration(
+                              gradient: const LinearGradient(
+                                begin: Alignment(0.00, -1.00),
+                                end: Alignment(0, 1),
+                                colors: [Color(0xFFF3F8FF), Color(0xFFB8D5FF)],
+                              ),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                            ),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                const SizedBox(
+                                  height: 30,
+                                ),
+                                Center(
+                                  child: Image.asset(
+                                      'assets/v2 Images/Group.png',
+                                      height: 120),
+                                ),
+                                const Text(
+                                  'Egg',
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                                ),
+                                const Text(
+                                  'FREE',
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 10.62,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                ),
+                                const Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text(
+                                      '60',
+                                      style: TextStyle(
+                                        color: Color(0xFF9B9999),
+                                        fontSize: 7.98,
+                                        fontWeight: FontWeight.w500,
+                                      ),
+                                    ),
+                                    Text(
+                                      '100 g',
+                                      style: TextStyle(
+                                        color: Color(0xFF302E2E),
+                                        fontSize: 10,
+                                        fontWeight: FontWeight.w400,
+                                      ),
+                                    )
+                                  ],
+                                )
+                              ],
+                            ),
+                          ),
+                          Positioned(
+                            top:
+                                -20, // Adjust this value to move the image further out
+                            left:
+                                -20, // Adjust this value to move the image further left
+                            child: Image.asset(
+                              'assets/v2 Images/get.png',
+                              width: 100,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  Container(
+                    width: screenWidth * .9,
+                    // height: 289,
+                    decoration: const BoxDecoration(
+                      color: Color(0xFFE4FFE1),
+                    ),
+                    child: Column(
+                      children: [
+                        Row(
+                          children: [
+                            const Text(
+                              'Get up to 60% off &\nExtra cashback!',
+                              style: TextStyle(
+                                color: Color(0xFF2F9623),
+                                fontSize: 22.50,
+                                fontWeight: FontWeight.w700,
+                              ),
+                            ),
+                            Image.asset(
+                              'assets/v2 Images/Frame 10.png',
+                              width: 100,
+                            ),
+                          ],
+                        ),
+                        Row(
+                          children: [
+                            for (int i = 0; i <= 2; i++)
+                              Container(
+                                padding: const EdgeInsets.all(10),
+                                decoration: ShapeDecoration(
+                                  shape: RoundedRectangleBorder(
+                                    side: const BorderSide(
+                                      width: 0.62,
+                                      strokeAlign:
+                                          BorderSide.strokeAlignOutside,
+                                      color: Color(0xFFD9D9D9),
+                                    ),
+                                    borderRadius: BorderRadius.circular(8.68),
+                                  ),
+                                ),
+                                child: Image.asset(
+                                  'assets/v2 Images/lays 10.png',
+                                  width: 100,
+                                ),
+                              ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                  ElevatedButton(
+                      onPressed: () {},
+                      child: Row(
+                        children: [
+                          const SizedBox(
+                            width: 112,
+                            child: Text(
+                              'Try GGO Offer',
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 16,
+                                fontFamily: 'Roboto',
+                                fontWeight: FontWeight.w600,
+                                height: 0,
+                              ),
+                            ),
+                          ),
+                          Image.asset("assets/v2 Images/Vector.png")
+                        ],
+                      ))
                 ],
               ),
             ),

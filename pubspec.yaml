@@ -76,6 +76,7 @@ dependencies:
   google_maps_webapi: ^0.0.22
   flutter_ellipsis_text: ^1.0.1
   carousel_slider: ^5.0.0
+  google_fonts: ^6.2.1
 
 dev_dependencies:
   flutter_test:
@@ -207,7 +208,13 @@ flutter:
     - assets/v2 Images/Group 1744.png
     - assets/v2 Images/fresh-healthy-fruits-straw-basket-generative-ai.jpg
     - assets/v2 Images/lays 10.png
-
+    - assets/v2 Images/Group 109.png
+    - assets/v2 Images/Layer 1.png
+    - assets/v2 Images/get.png
+    - assets/v2 Images/EGG 1.png
+    - assets/v2 Images/Group.png
+    - assets/v2 Images/Frame 10.png
+    - assets/v2 Images/Vector.png
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 
