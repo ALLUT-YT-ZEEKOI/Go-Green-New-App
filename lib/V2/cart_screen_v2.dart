@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gogreen_lite/V2/Home_v2_widgets/main_product_card_v2.dart';
+import 'package:gogreen_lite/V2/custom_height_v2.dart';
 
 class CartScreenV2 extends StatelessWidget {
   const CartScreenV2({super.key});
@@ -28,6 +29,7 @@ class CartScreenV2 extends StatelessWidget {
           child: Container(
             padding: const EdgeInsets.all(12),
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -272,6 +274,7 @@ class CartScreenV2 extends StatelessWidget {
                   height: 18,
                 ),
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     const Text(
                       'Farm Fresh Picks',
@@ -285,6 +288,140 @@ class CartScreenV2 extends StatelessWidget {
                     ),
                     CustomElevatedButton(screenWidth: screenWidth)
                   ],
+                ),
+                const CustomHeightV2(),
+                Container(
+                  // width: 311,
+                  height: 100,
+                  decoration: ShapeDecoration(
+                    color: Colors.white,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                  ),
+                  child: const Padding(
+                    padding:
+                        EdgeInsets.symmetric(horizontal: 12.0, vertical: 8.0),
+                    child: TextField(
+                      maxLines:
+                          null, // Allows the text field to expand vertically if needed
+                      decoration: InputDecoration(
+                          border: InputBorder.none,
+                          hintText: 'Enter text here...',
+                          hintStyle: TextStyle(
+                              color: Color.fromARGB(255, 100, 97, 97),
+                              fontSize: 12)),
+                    ),
+                  ),
+                ),
+                const CustomHeightV2(),
+                const Text(
+                  'Coupons & discount',
+                  style: TextStyle(
+                    color: Color(0xFF202020),
+                    fontSize: 15,
+                    fontWeight: FontWeight.w300,
+                  ),
+                  overflow: TextOverflow.ellipsis,
+                  textAlign: TextAlign.center,
+                ),
+                const CustomHeightV2(),
+                Container(
+                  decoration: ShapeDecoration(
+                    color: Colors.white,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                  ),
+                  child: Column(
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Row(
+                            children: [
+                              Image.asset(
+                                'assets/v2 Images/clock_loader_40.png',
+                                width: 40,
+                              ),
+                              const Text(
+                                'Delivery in 13 minutes',
+                                style: TextStyle(
+                                  color: Color(0xFF1D2730),
+                                  fontSize: 13,
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              ),
+                            ],
+                          ),
+                          const Text(
+                            textAlign: TextAlign.end,
+                            'Shipment of 5 items',
+                            style: TextStyle(
+                              color: Color(0xFF999999),
+                              fontSize: 10,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          )
+                        ],
+                      ),
+                      Container(
+                        width: 311,
+                        height: 67,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(12),
+                          border: Border.all(
+                              color: Colors.grey.shade300), // Optional border
+                        ),
+                        child: Row(
+                          children: [
+                            Expanded(
+                              child: Padding(
+                                padding: const EdgeInsets.symmetric(
+                                    horizontal: 12.0),
+                                child: TextField(
+                                  decoration: InputDecoration(
+                                    hintText: 'Enter text here...',
+                                    border: UnderlineInputBorder(
+                                      borderSide: BorderSide(
+                                          color: Colors.grey.shade300),
+                                    ),
+                                    // Remove text input underline
+                                    contentPadding: const EdgeInsets.symmetric(
+                                        vertical: 10.0),
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(right: 8.0),
+                              child: GestureDetector(
+                                onTap: () {
+                                  // Your button click logic
+                                  print("Apply button clicked");
+                                },
+                                child: Container(
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 16, vertical: 10),
+                                  decoration: BoxDecoration(
+                                    color: Colors.blue,
+                                    borderRadius: BorderRadius.circular(8),
+                                  ),
+                                  child: const Text(
+                                    'Apply',
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
                 )
               ],
             ),
@@ -301,31 +438,30 @@ class CustomElevatedButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 100,
-      height: 50,
+      width: 80,
+      height: 30,
       child: ElevatedButton(
         onPressed: () {},
         style: ElevatedButton.styleFrom(
-          foregroundColor: const Color(0xFF2382B7),
-          backgroundColor: const Color(0xFF2382B7),
+          foregroundColor: const Color(0xFFFFF6F1),
+          // backgroundColor: const Color.fromARGB(255, 255, 255, 255),
           padding: EdgeInsets.zero,
           shape: RoundedRectangleBorder(
             side: const BorderSide(
               width: 0.93,
-              color: Color(0xFF037ABC),
+              color: Color(0xFFF28B51),
             ),
-            borderRadius: BorderRadius.circular(12.97),
+            borderRadius: BorderRadius.circular(8.97),
           ),
         ),
-        child: const Padding(
-          padding: EdgeInsets.all(8.0),
-          child: Text(
-            'Refer Now',
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 13,
-              fontWeight: FontWeight.w600,
-            ),
+        child: const Text(
+          'Change',
+          style: TextStyle(
+            color: Color(0xFFF28B51),
+            fontSize: 10,
+            fontFamily: 'Poppins',
+            fontWeight: FontWeight.w500,
+            height: 0,
           ),
         ),
       ),
