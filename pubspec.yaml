@@ -215,6 +215,7 @@ flutter:
     - assets/v2 Images/Group.png
     - assets/v2 Images/Frame 10.png
     - assets/v2 Images/Vector.png
+    - assets/v2 Images/budget 1.png
    
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

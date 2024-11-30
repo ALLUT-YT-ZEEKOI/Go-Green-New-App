@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ellipsis_text/flutter_ellipsis_text.dart';
-import 'package:gogreen_lite/V2/main_product_card_v2.dart';
+import 'package:gogreen_lite/V2/v2_widgets/main_product_card_v2.dart';
 import 'package:gogreen_lite/V2/v2_widgets/home_page_Featured)v2..dart';
 import 'package:gogreen_lite/V2/v2_widgets/home_page_first_courcel_v2.dart';
 import 'package:gogreen_lite/V2/v2_widgets/home_page_image_second_courcel.dart';

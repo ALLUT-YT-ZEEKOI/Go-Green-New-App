@@ -34,9 +34,9 @@ class HomePageFeaturedv2 extends StatelessWidget {
                       borderRadius: BorderRadius.circular(14),
                     ),
                   ),
-                  child: const Column(
+                  child:  Column(
                     children: [
-                      Text(
+                      const Text(
                         'Easiest way to',
                         style: TextStyle(
                           color: Color(0xFF2383B8),
@@ -48,7 +48,7 @@ class HomePageFeaturedv2 extends StatelessWidget {
                       ),
                       Row(
                         children: [
-                          Column(
+                          const Column(
                             children: [
                               Text(
                                 'Refer And Earn!',
@@ -61,7 +61,9 @@ class HomePageFeaturedv2 extends StatelessWidget {
                                 ),
                               ),
                               Text(
-                                "hai",
+                                "Earn for each referral,
+  and enjoy \nup to 2500
+  GGO Money.",
                                 style: TextStyle(
                                   color: Color(0xFF1A232E),
                                   fontSize: 12,
@@ -72,6 +74,7 @@ class HomePageFeaturedv2 extends StatelessWidget {
                               )
                             ],
                           ),
+                          Image.asset('assets/v2 Images/budget 1.png')
                         ],
                       ),
                     ],
