@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ellipsis_text/flutter_ellipsis_text.dart';
-import 'package:gogreen_lite/V2/v2_widgets/main_product_card_v2.dart';
-import 'package:gogreen_lite/V2/v2_widgets/home_page_Featured)v2..dart';
-import 'package:gogreen_lite/V2/v2_widgets/home_page_first_courcel_v2.dart';
-import 'package:gogreen_lite/V2/v2_widgets/home_page_image_second_courcel.dart';
+import 'package:gogreen_lite/V2/Home_v2_widgets/home_page_Featured)v2..dart';
+import 'package:gogreen_lite/V2/Home_v2_widgets/home_page_first_courcel_v2.dart';
+import 'package:gogreen_lite/V2/Home_v2_widgets/home_page_image_second_courcel.dart';
+import 'package:gogreen_lite/V2/Home_v2_widgets/main_product_card_v2.dart';
+import 'package:gogreen_lite/V2/cart_screen_v2.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class HomeScreenV2 extends StatelessWidget {
@@ -188,25 +189,34 @@ class HomeScreenV2 extends StatelessWidget {
                       scrollDirection: Axis.horizontal,
                       itemCount: famCategoryCount,
                       itemBuilder: (BuildContext context, int index) {
-                        return Container(
-                          margin: const EdgeInsets.all(3),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Image.asset(
-                                'assets/v2 Images/Mask grou0.p.png',
-                                width: 100,
-                                height: 100,
-                              ),
-                              const Text(
-                                'Gingely Oil',
-                                style: TextStyle(
-                                  color: Colors.black,
-                                  fontSize: 13,
-                                  fontWeight: FontWeight.w600,
+                        return GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const CartScreenV2()),
+                            );
+                          },
+                          child: Container(
+                            margin: const EdgeInsets.all(3),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Image.asset(
+                                  'assets/v2 Images/Mask grou0.p.png',
+                                  width: 100,
+                                  height: 100,
                                 ),
-                              )
-                            ],
+                                const Text(
+                                  'Gingely Oil',
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 13,
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                                )
+                              ],
+                            ),
                           ),
                         );
                       },
@@ -263,6 +273,7 @@ class HomeScreenV2 extends StatelessWidget {
             Container(
               padding: const EdgeInsets.all(12),
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -654,6 +665,20 @@ class HomeScreenV2 extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
+                      Container(
+                        width: screenWidth * 0.3,
+                        height: 3,
+                        decoration: ShapeDecoration(
+                          gradient: const LinearGradient(
+                            begin: Alignment(1.00, 0.00),
+                            end: Alignment(-1, 0),
+                            colors: [Color(0xFFF3F3F3), Colors.white],
+                          ),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(100),
+                          ),
+                        ),
+                      ),
                       const Text(
                         'Farm Fresh Picks',
                         style: TextStyle(
@@ -678,18 +703,62 @@ class HomeScreenV2 extends StatelessWidget {
                           ),
                         ),
                       ),
-                      const Text(
-                        'See All',
-                        textAlign: TextAlign.right,
-                        style: TextStyle(
-                          color: Color(0xFF00B761),
-                          fontSize: 14,
-                          fontWeight: FontWeight.w400,
-                        ),
-                      )
                     ],
                   ),
-                  const HomePageFeaturedv2()
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  const HomePageFeaturedv2(),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  const Text.rich(
+                    TextSpan(
+                      children: [
+                        TextSpan(
+                          text: 'India’',
+                          style: TextStyle(
+                            color: Color(0xFF959595),
+                            fontSize: 13.55,
+                            fontWeight: FontWeight.w400,
+                          ),
+                        ),
+                        TextSpan(
+                          text: ' 1st',
+                          style: TextStyle(
+                            color: Color(0xFF2F9623),
+                            fontSize: 29.01,
+                            fontWeight: FontWeight.w900,
+                          ),
+                        ),
+                        TextSpan(
+                          text: '  Platform',
+                          style: TextStyle(
+                            color: Color(0xFF959595),
+                            fontSize: 13.55,
+                            fontWeight: FontWeight.w400,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  const Text(
+                    'to Choose \nYour Farmer',
+                    style: TextStyle(
+                      color: Color(0xFF8B8B8B),
+                      fontSize: 42.37,
+                      fontWeight: FontWeight.w900,
+                    ),
+                  ),
+                  const Text('Harvested with ❤️, Delivered to Your Doorstep',
+                      style: TextStyle(
+                        color: Color(0xFF959595),
+                        fontSize: 12.50,
+                        fontWeight: FontWeight.w300,
+                      ))
                 ],
               ),
             ),

@@ -216,6 +216,9 @@ flutter:
     - assets/v2 Images/Frame 10.png
     - assets/v2 Images/Vector.png
     - assets/v2 Images/budget 1.png
+    #  cart page  images
+    - assets/v2 Images/clock_loader_40.png
+    - assets/v2 Images/fluent-emoji-high-contrast_farmer.png
    
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
