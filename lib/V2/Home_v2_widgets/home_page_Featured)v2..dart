@@ -81,7 +81,7 @@ class HomePageFeaturedv2 extends StatelessWidget {
                           )
                         ],
                       ),
-                      const SizedBox(height: 30),
+                      const SizedBox(height: 20),
                       CustomElevatedButton(screenWidth: screenWidth),
                     ],
                   ),
@@ -124,7 +124,7 @@ class CustomElevatedButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: screenWidth * 0.9,
-      height: 50,
+      height: 55,
       child: ElevatedButton(
         onPressed: () {},
         style: ElevatedButton.styleFrom(

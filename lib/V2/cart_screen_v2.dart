@@ -371,10 +371,8 @@ class CartScreenV2 extends StatelessWidget {
                             color: Colors.white,
                             border: Border(
                               bottom: BorderSide(
-                                color: Colors
-                                    .black, // Set the color of the bottom border
-                                width:
-                                    1.0, // Set the width of the bottom border
+                                color: Colors.black,
+                                width: 1.0,
                               ),
                             )),
                         child: Row(
@@ -672,17 +670,149 @@ class CartScreenV2 extends StatelessWidget {
                   ),
                 ),
                 Container(
-                    height: 46,
-                    decoration: const ShapeDecoration(
-                      color: Color(0xAAC0EAFF),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.only(
-                          bottomLeft: Radius.circular(12),
-                          bottomRight: Radius.circular(12),
-                        ),
+                  padding: const EdgeInsets.all(12),
+                  decoration: const ShapeDecoration(
+                    color: Color(0xAAC0EAFF),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.only(
+                        bottomLeft: Radius.circular(12),
+                        bottomRight: Radius.circular(12),
                       ),
                     ),
-                    child: const Column(children: [])),
+                  ),
+                  child: const Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            'Your total savings',
+                            style: TextStyle(
+                              color: Color(0xFF037ABC),
+                              fontSize: 10,
+                              fontFamily: 'Poppins',
+                              fontWeight: FontWeight.w500,
+                              height: 0,
+                            ),
+                          ),
+                          Text(
+                            '₹50739',
+                            style: TextStyle(
+                              color: Color(0xFF037ABC),
+                              fontSize: 10,
+                              fontFamily: 'Poppins',
+                              fontWeight: FontWeight.w500,
+                              height: 0,
+                            ),
+                          )
+                        ],
+                      ),
+                      Text(
+                        'Includes ₹25 savings through free delivery',
+                        style: TextStyle(
+                          color: Color(0xFF037ABC),
+                          fontSize: 6,
+                          fontFamily: 'Poppins',
+                          fontWeight: FontWeight.w400,
+                          height: 0,
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+                const CustomHeightV2(),
+                const Text(
+                  'Bill details',
+                  style: TextStyle(
+                    color: Color(0xFF202020),
+                    fontSize: 15,
+                    fontWeight: FontWeight.w300,
+                  ),
+                  overflow: TextOverflow.ellipsis,
+                  textAlign: TextAlign.center,
+                ),
+                const CustomHeightV2(),
+                Container(
+                  padding: const EdgeInsets.all(12),
+                  decoration: ShapeDecoration(
+                    color: Colors.white,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                  ),
+                  child: Column(
+                    children: [
+                      Row(
+                        children: [
+                          Container(
+                            width: screenWidth * .4 + 10,
+                            padding: const EdgeInsets.all(7),
+                            decoration: ShapeDecoration(
+                              shape: RoundedRectangleBorder(
+                                side: const BorderSide(
+                                    width: 1, color: Color(0xFFDFDFDF)),
+                                borderRadius: BorderRadius.circular(7),
+                              ),
+                            ),
+                            child: Row(
+                              children: [
+                                Image.asset(
+                                  'assets/v2 Images/Vector123.png',
+                                  width: 16,
+                                ),
+                                const SizedBox(
+                                  width: 8,
+                                ),
+                                const Text(
+                                  'Avoid ringing bell',
+                                  style: TextStyle(
+                                    color: Color(0xFF1D2730),
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                )
+                              ],
+                            ),
+                          ),
+                          const SizedBox(
+                            width: 8,
+                          ),
+                          Container(
+                            width: screenWidth * .4 + 10,
+                            padding: const EdgeInsets.all(7),
+                            decoration: ShapeDecoration(
+                              shape: RoundedRectangleBorder(
+                                side: const BorderSide(
+                                    width: 1, color: Color(0xFFDFDFDF)),
+                                borderRadius: BorderRadius.circular(7),
+                              ),
+                            ),
+                            child: Row(
+                              children: [
+                                Image.asset(
+                                  'assets/v2 Images/Vector123.png',
+                                  width: 16,
+                                ),
+                                const SizedBox(
+                                  width: 8,
+                                ),
+                                const Text(
+                                  'Avoid ringing bell',
+                                  style: TextStyle(
+                                    color: Color(0xFF1D2730),
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                )
+                              ],
+                            ),
+                          ),
+                        ],
+                      )
+                    ],
+                  ),
+                )
               ],
             ),
           ),
