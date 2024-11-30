@@ -327,6 +327,7 @@ class CartScreenV2 extends StatelessWidget {
                 ),
                 const CustomHeightV2(),
                 Container(
+                  padding: const EdgeInsets.all(10),
                   decoration: ShapeDecoration(
                     color: Colors.white,
                     shape: RoundedRectangleBorder(
@@ -341,7 +342,7 @@ class CartScreenV2 extends StatelessWidget {
                           Row(
                             children: [
                               Image.asset(
-                                'assets/v2 Images/clock_loader_40.png',
+                                'assets/v2 Images/bxs_offer.png',
                                 width: 40,
                               ),
                               const Text(
@@ -366,14 +367,16 @@ class CartScreenV2 extends StatelessWidget {
                         ],
                       ),
                       Container(
-                        width: 311,
-                        height: 67,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(12),
-                          border: Border.all(
-                              color: Colors.grey.shade300), // Optional border
-                        ),
+                        decoration: const BoxDecoration(
+                            color: Colors.white,
+                            border: Border(
+                              bottom: BorderSide(
+                                color: Colors
+                                    .black, // Set the color of the bottom border
+                                width:
+                                    1.0, // Set the width of the bottom border
+                              ),
+                            )),
                         child: Row(
                           children: [
                             Expanded(
@@ -381,8 +384,14 @@ class CartScreenV2 extends StatelessWidget {
                                 padding: const EdgeInsets.symmetric(
                                     horizontal: 12.0),
                                 child: TextField(
+                                  focusNode: FocusNode(),
                                   decoration: InputDecoration(
                                     hintText: 'Enter text here...',
+                                    hintStyle: const TextStyle(
+                                      color: Color(0xFF909090),
+                                      fontSize: 11,
+                                      fontWeight: FontWeight.w500,
+                                    ),
                                     border: UnderlineInputBorder(
                                       borderSide: BorderSide(
                                           color: Colors.grey.shade300),
@@ -402,16 +411,16 @@ class CartScreenV2 extends StatelessWidget {
                                   print("Apply button clicked");
                                 },
                                 child: Container(
-                                  padding: const EdgeInsets.symmetric(
-                                      horizontal: 16, vertical: 10),
                                   decoration: BoxDecoration(
-                                    color: Colors.blue,
+                                    border: Border.all(
+                                        style: BorderStyle.none), // No border
+                                    color: Colors.transparent,
                                     borderRadius: BorderRadius.circular(8),
                                   ),
                                   child: const Text(
                                     'Apply',
                                     style: TextStyle(
-                                      color: Colors.white,
+                                      color: Color.fromARGB(255, 14, 13, 13),
                                     ),
                                   ),
                                 ),
@@ -419,8 +428,164 @@ class CartScreenV2 extends StatelessWidget {
                             ),
                           ],
                         ),
-                      )
+                      ),
                     ],
+                  ),
+                ),
+                const CustomHeightV2(),
+                const Text(
+                  'Bill details',
+                  style: TextStyle(
+                    color: Color(0xFF202020),
+                    fontSize: 15,
+                    fontWeight: FontWeight.w300,
+                  ),
+                  overflow: TextOverflow.ellipsis,
+                  textAlign: TextAlign.center,
+                ),
+                const CustomHeightV2(),
+                Container(
+                  padding: const EdgeInsets.all(12),
+                  height: 115,
+                  decoration: ShapeDecoration(
+                    color: Colors.white,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                  ),
+                  child: Column(
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Row(
+                            children: [
+                              Image.asset(
+                                'assets/v2 Images/bxs_offer.png',
+                                width: 28,
+                              ),
+                              const Text(
+                                'Items total',
+                                style: TextStyle(
+                                  color: Color(0xFF1D2730),
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                              const SizedBox(
+                                width: 8,
+                              ),
+                              Container(
+                                padding: const EdgeInsets.all(5),
+                                decoration: ShapeDecoration(
+                                  color: const Color(0xFFF0F9FF),
+                                  shape: RoundedRectangleBorder(
+                                    side: const BorderSide(
+                                        width: 0.51, color: Color(0xFF037ABC)),
+                                    borderRadius: BorderRadius.circular(2.98),
+                                  ),
+                                ),
+                                child: const Center(
+                                  child: Text(
+                                    'Saved ₹500',
+                                    style: TextStyle(
+                                      color: Color(0xFF037ABC),
+                                      fontSize: 8,
+                                      fontWeight: FontWeight.w500,
+                                    ),
+                                  ),
+                                ),
+                              )
+                            ],
+                          ),
+                          const Row(
+                            children: [
+                              Text(
+                                '₹50739',
+                                style: TextStyle(
+                                  color: Color(0xFF909090),
+                                  fontSize: 10,
+                                  fontFamily: 'Poppins',
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                              SizedBox(
+                                width: 8,
+                              ),
+                              Text(
+                                '₹50739',
+                                style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 10,
+                                  fontFamily: 'Poppins',
+                                  fontWeight: FontWeight.w500,
+                                  height: 0,
+                                ),
+                              )
+                            ],
+                          )
+                        ],
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Row(
+                            children: [
+                              Image.asset(
+                                'assets/v2 Images/bxs_offer.png',
+                                width: 28,
+                              ),
+                              const Text(
+                                'Delivery charge',
+                                style: TextStyle(
+                                  color: Color(0xFF1D2730),
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                            ],
+                          ),
+                          const Row(
+                            children: [
+                              Text(
+                                '₹50739',
+                                style: TextStyle(
+                                  color: Color(0xFF909090),
+                                  fontSize: 10,
+                                  fontFamily: 'Poppins',
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                              SizedBox(
+                                width: 8,
+                              ),
+                              Text(
+                                '₹50739',
+                                style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 10,
+                                  fontFamily: 'Poppins',
+                                  fontWeight: FontWeight.w500,
+                                  height: 0,
+                                ),
+                              )
+                            ],
+                          )
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+                Container(
+                  height: 46,
+                  decoration: const ShapeDecoration(
+                    color: Color(0xAAC0EAFF),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.only(
+                        bottomLeft: Radius.circular(12),
+                        bottomRight: Radius.circular(12),
+                      ),
+                    ),
                   ),
                 )
               ],
