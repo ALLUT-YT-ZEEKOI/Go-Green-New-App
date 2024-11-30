@@ -446,7 +446,6 @@ class CartScreenV2 extends StatelessWidget {
                 const CustomHeightV2(),
                 Container(
                   padding: const EdgeInsets.all(12),
-                  height: 115,
                   decoration: ShapeDecoration(
                     color: Colors.white,
                     shape: RoundedRectangleBorder(
@@ -560,9 +559,9 @@ class CartScreenV2 extends StatelessWidget {
                                 width: 8,
                               ),
                               Text(
-                                '₹50739',
+                                'FREE',
                                 style: TextStyle(
-                                  color: Colors.black,
+                                  color: Color(0xFF037ABC),
                                   fontSize: 10,
                                   fontFamily: 'Poppins',
                                   fontWeight: FontWeight.w500,
@@ -573,21 +572,117 @@ class CartScreenV2 extends StatelessWidget {
                           )
                         ],
                       ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Row(
+                            children: [
+                              Image.asset(
+                                'assets/v2 Images/bxs_offer.png',
+                                width: 28,
+                              ),
+                              const Text(
+                                'Delivery charge',
+                                style: TextStyle(
+                                  color: Color(0xFF1D2730),
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                            ],
+                          ),
+                          const Row(
+                            children: [
+                              Text(
+                                '₹50739',
+                                style: TextStyle(
+                                  color: Color(0xFF909090),
+                                  fontSize: 10,
+                                  fontFamily: 'Poppins',
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                              SizedBox(
+                                width: 8,
+                              ),
+                              Text(
+                                'FREE',
+                                style: TextStyle(
+                                  color: Color(0xFF037ABC),
+                                  fontSize: 10,
+                                  fontFamily: 'Poppins',
+                                  fontWeight: FontWeight.w500,
+                                  height: 0,
+                                ),
+                              )
+                            ],
+                          )
+                        ],
+                      ),
+                      Container(
+                        decoration: const ShapeDecoration(
+                          shape: RoundedRectangleBorder(
+                            side: BorderSide(
+                              width: 1,
+                              strokeAlign: BorderSide.strokeAlignCenter,
+                              color: Color(0x071D2730),
+                            ),
+                          ),
+                        ),
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Row(
+                            children: [
+                              Image.asset(
+                                'assets/v2 Images/bxs_offer.png',
+                                width: 28,
+                              ),
+                              const Text(
+                                'Grand Total',
+                                style: TextStyle(
+                                  color: Color(0xFF1D2730),
+                                  fontSize: 13,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              )
+                            ],
+                          ),
+                          const Row(
+                            children: [
+                              Text(
+                                '₹48564',
+                                style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 12,
+                                  fontFamily: 'Poppins',
+                                  fontWeight: FontWeight.w500,
+                                  height: 0,
+                                ),
+                              ),
+                              SizedBox(
+                                width: 8,
+                              ),
+                            ],
+                          )
+                        ],
+                      ),
                     ],
                   ),
                 ),
                 Container(
-                  height: 46,
-                  decoration: const ShapeDecoration(
-                    color: Color(0xAAC0EAFF),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.only(
-                        bottomLeft: Radius.circular(12),
-                        bottomRight: Radius.circular(12),
+                    height: 46,
+                    decoration: const ShapeDecoration(
+                      color: Color(0xAAC0EAFF),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.only(
+                          bottomLeft: Radius.circular(12),
+                          bottomRight: Radius.circular(12),
+                        ),
                       ),
                     ),
-                  ),
-                )
+                    child: const Column(children: [])),
               ],
             ),
           ),
