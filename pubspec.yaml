@@ -221,7 +221,8 @@ flutter:
     - assets/v2 Images/fluent-emoji-high-contrast_farmer.png
     - assets/v2 Images/bxs_offer.png
     - assets/v2 Images/Vector123.png
-   
+    - assets/v2 Images/arrow_circle_right.png
+
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 

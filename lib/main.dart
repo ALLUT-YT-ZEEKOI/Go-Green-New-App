@@ -126,12 +126,14 @@ class _MyAppState extends State<MyApp> {
       AndroidNotification? androidNotification = message.notification?.android;
       if (notification != null && androidNotification != null) {
         flutterLocalNotificationsPlugin.show(
-            notification.hashCode,
-            notification.title,
-            notification.body,
-            NotificationDetails(
-                android: AndroidNotificationDetails(channel.id, channel.name,
-                    priority: Priority.max, icon: 'launch_background')));
+          notification.hashCode,
+          notification.title,
+          notification.body,
+          NotificationDetails(
+            android: AndroidNotificationDetails(channel.id, channel.name,
+                priority: Priority.max, icon: 'launch_background'),
+          ),
+        );
       }
     });
 
@@ -159,7 +161,7 @@ class _MyAppState extends State<MyApp> {
         providers: [
           ChangeNotifierProvider(create: (context) => MainProvider()),
           ChangeNotifierProvider(create: (context) => ApiProvider()),
-          ChangeNotifierProvider(create: (context) => CourcelProvider_1()),
+          ChangeNotifierProvider(create: (context) => Functions_v2()),
         ],
         child: GetMaterialApp(
             navigatorKey: navigatorKey,

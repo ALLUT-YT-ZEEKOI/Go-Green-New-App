@@ -166,17 +166,19 @@ class HomeScreenV2 extends StatelessWidget {
                         overflow: TextOverflow.ellipsis,
                         textAlign: TextAlign.center,
                       ),
-                      Container(
-                        width: screenWidth * 0.3,
-                        height: 3,
-                        decoration: ShapeDecoration(
-                          gradient: const LinearGradient(
-                            begin: Alignment(1.00, 0.00),
-                            end: Alignment(-1, 0),
-                            colors: [Color(0xFFF3F3F3), Colors.white],
-                          ),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(100),
+                      Expanded(
+                        child: Container(
+                          // width: screenWidth * 0.3,
+                          height: 3,
+                          decoration: ShapeDecoration(
+                            gradient: const LinearGradient(
+                              begin: Alignment(1.00, 0.00),
+                              end: Alignment(-1, 0),
+                              colors: [Color(0xFFF3F3F3), Colors.white],
+                            ),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(100),
+                            ),
                           ),
                         ),
                       ),
@@ -373,17 +375,19 @@ class HomeScreenV2 extends StatelessWidget {
                         overflow: TextOverflow.ellipsis,
                         textAlign: TextAlign.center,
                       ),
-                      Container(
-                        width: screenWidth * 0.6,
-                        height: 3,
-                        decoration: ShapeDecoration(
-                          gradient: const LinearGradient(
-                            begin: Alignment(-1, 0),
-                            end: Alignment(1.00, 0.00),
-                            colors: [Color(0xFFF3F3F3), Colors.white],
-                          ),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(100),
+                      Expanded(
+                        child: Container(
+                          width: screenWidth * 0.6,
+                          height: 3,
+                          decoration: ShapeDecoration(
+                            gradient: const LinearGradient(
+                              begin: Alignment(-1, 0),
+                              end: Alignment(1.00, 0.00),
+                              colors: [Color(0xFFF3F3F3), Colors.white],
+                            ),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(100),
+                            ),
                           ),
                         ),
                       ),
@@ -400,7 +404,7 @@ class HomeScreenV2 extends StatelessWidget {
                         children: [
                           Container(
                             padding: const EdgeInsets.all(10),
-                            width: screenWidth * .4 + 25,
+                            width: screenWidth * .4 + 15,
                             decoration: ShapeDecoration(
                               gradient: const LinearGradient(
                                 begin: Alignment(0.00, -1.00),
@@ -476,7 +480,7 @@ class HomeScreenV2 extends StatelessWidget {
                         children: [
                           Container(
                             padding: const EdgeInsets.all(10),
-                            width: screenWidth * .4 + 25,
+                            width: screenWidth * .4 + 15,
                             decoration: ShapeDecoration(
                               gradient: const LinearGradient(
                                 begin: Alignment(0.00, -1.00),
@@ -496,7 +500,7 @@ class HomeScreenV2 extends StatelessWidget {
                                 Center(
                                   child: Image.asset(
                                       'assets/v2 Images/Group.png',
-                                      height: 120),
+                                      height: 100),
                                 ),
                                 const Text(
                                   'Egg',
@@ -564,6 +568,7 @@ class HomeScreenV2 extends StatelessWidget {
                     child: Column(
                       children: [
                         Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             const Text(
                               'Get up to 60% off &\nExtra cashback!',
@@ -575,48 +580,57 @@ class HomeScreenV2 extends StatelessWidget {
                             ),
                             Image.asset(
                               'assets/v2 Images/Frame 10.png',
-                              width: 100,
+                              width: screenWidth * .2 + 10,
                             ),
                           ],
                         ),
-                        Row(
-                          children: [
-                            for (int i = 0; i <= 2; i++)
-                              Expanded(
-                                child: Column(
-                                  children: [
-                                    Container(
-                                      padding: const EdgeInsets.all(10),
-                                      decoration: ShapeDecoration(
-                                        shape: RoundedRectangleBorder(
-                                          side: const BorderSide(
-                                            width: 0.62,
-                                            strokeAlign:
-                                                BorderSide.strokeAlignOutside,
-                                            color: Color(0xFFD9D9D9),
-                                          ),
-                                          borderRadius:
-                                              BorderRadius.circular(8.68),
+                        GridView.builder(
+                            gridDelegate:
+                                const SliverGridDelegateWithFixedCrossAxisCount(
+                              crossAxisCount: 3,
+                              crossAxisSpacing: 8,
+                              mainAxisSpacing: 12,
+                              childAspectRatio: 0.75,
+                            ),
+                            shrinkWrap: true,
+                            physics:
+                                const NeverScrollableScrollPhysics(), // Avoids internal scrolling
+                            itemCount: 3, // Replace with your actual item count
+                            itemBuilder: (context, index) {
+                              return Column(
+                                children: [
+                                  Container(
+                                    padding: const EdgeInsets.all(10),
+                                    decoration: ShapeDecoration(
+                                      shape: RoundedRectangleBorder(
+                                        side: const BorderSide(
+                                          width: 0.62,
+                                          strokeAlign:
+                                              BorderSide.strokeAlignOutside,
+                                          color: Color(0xFFD9D9D9),
                                         ),
-                                      ),
-                                      child: Image.asset(
-                                        'assets/v2 Images/lays 10.png',
-                                        width: 100,
+                                        borderRadius:
+                                            BorderRadius.circular(8.68),
                                       ),
                                     ),
-                                    const Text(
-                                      'Extra Cheesy Lays Classic',
-                                      style: TextStyle(
-                                        color: Colors.black,
-                                        fontSize: 11,
-                                        fontWeight: FontWeight.w600,
-                                      ),
-                                    )
-                                  ],
-                                ),
-                              ),
-                          ],
-                        ),
+                                    child: Image.asset(
+                                      'assets/v2 Images/lays 10.png',
+                                      width: 100, // Adjust width as necessary
+                                    ),
+                                  ),
+                                  const SizedBox(height: 8),
+                                  const Text(
+                                    'Extra Cheesy Lays Classic',
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                      color: Colors.black,
+                                      fontSize: 11,
+                                      fontWeight: FontWeight.w600,
+                                    ),
+                                  ),
+                                ],
+                              );
+                            }),
                         const SizedBox(
                           height: 10,
                         ),
@@ -689,17 +703,19 @@ class HomeScreenV2 extends StatelessWidget {
                         overflow: TextOverflow.ellipsis,
                         textAlign: TextAlign.center,
                       ),
-                      Container(
-                        width: screenWidth * 0.3,
-                        height: 3,
-                        decoration: ShapeDecoration(
-                          gradient: const LinearGradient(
-                            begin: Alignment(1.00, 0.00),
-                            end: Alignment(-1, 0),
-                            colors: [Color(0xFFF3F3F3), Colors.white],
-                          ),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(100),
+                      Expanded(
+                        child: Container(
+                          width: screenWidth * 0.3,
+                          height: 3,
+                          decoration: ShapeDecoration(
+                            gradient: const LinearGradient(
+                              begin: Alignment(1.00, 0.00),
+                              end: Alignment(-1, 0),
+                              colors: [Color(0xFFF3F3F3), Colors.white],
+                            ),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(100),
+                            ),
                           ),
                         ),
                       ),
@@ -758,13 +774,13 @@ class HomeScreenV2 extends StatelessWidget {
                         color: Color(0xFF959595),
                         fontSize: 12.50,
                         fontWeight: FontWeight.w300,
-                      ))
+                      )),
                 ],
               ),
             ),
             const SizedBox(
               height: 200,
-            )
+            ),
           ],
         ),
       ),

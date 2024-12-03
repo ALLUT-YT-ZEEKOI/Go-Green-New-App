@@ -9,12 +9,14 @@ class HomePageFeaturedv2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
-    final mainProvider = Provider.of<CourcelProvider_1>(context);
+    double screenHeight = MediaQuery.of(context).size.height;
+    final mainProvider = Provider.of<Functions_v2>(context);
 
     return Column(
       children: [
         CarouselSlider(
           options: CarouselOptions(
+            height: screenHeight * .2 + 50,
             viewportFraction: 1,
             onPageChanged: (index, reason) {
               mainProvider.updateCaroselindex(index);

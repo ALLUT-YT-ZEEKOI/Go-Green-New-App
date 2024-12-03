@@ -12,7 +12,7 @@ class HomePageImageSecondCourcel extends StatelessWidget {
   Widget build(BuildContext context) {
     // double screenWidth = MediaQuery.of(context).size.width;
     // double screenHeight = MediaQuery.of(context).size.height;
-    final mainProvider = Provider.of<CourcelProvider_1>(context);
+    final mainProvider = Provider.of<Functions_v2>(context);
     return Column(
       children: [
         CarouselSlider(

@@ -11,13 +11,13 @@ class HomePageFirstCourcelV2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // double screenWidth = MediaQuery.of(context).size.width;
-    // double screenHeight = MediaQuery.of(context).size.height;
-    final mainProvider = Provider.of<CourcelProvider_1>(context);
+    final screenHeight = MediaQuery.of(context).size.height;
+    final mainProvider = Provider.of<Functions_v2>(context);
     return Column(
       children: [
         CarouselSlider(
           options: CarouselOptions(
-              height: 80,
+              height: screenHeight * 0.1 + 7,
               viewportFraction: 1,
               onPageChanged: (index, reason) {
                 mainProvider.updateCaroselindex(index);
@@ -73,7 +73,7 @@ class HomePageFirstCourcelV2 extends StatelessWidget {
                           ],
                         ),
                         const SizedBox(
-                          height: 5,
+                          height: 6,
                         ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
